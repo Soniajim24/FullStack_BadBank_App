@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "build": "npm install",
-    "start": "node http_server.js",
+    "start": "node http_server.js"
   },
   "engines": {
 
