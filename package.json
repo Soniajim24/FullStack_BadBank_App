@@ -7,13 +7,12 @@
     "dev": "next dev",
     "lint": "next lint",
     "build": "npm install",
-    "start": "node http_server.js"
+    "start": "npm run dev"
   },
   "engines": {
-   "node": "18.16.0",
+    "node": "18.16.0",
     "npm": "9.6.2"
   },
-  
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/server": "^11.11.0",
@@ -29,8 +28,6 @@
     "firebase": "^9.22.2",
     "firebase-admin": "^11.9.0",
     "grommet-icons": "^4.10.0",
-    "mongodb": "^5.6.0",
-    "mongoose": "^6.11.2",
     "next": "^13.4.7",
     "next-firebase-auth": "^1.0.0-canary.19",
     "react": "^18.2.0",
@@ -42,5 +39,4 @@
   "devDependencies": {
     "webpack-external-import": "^2.2.4"
   }
-  
 }
