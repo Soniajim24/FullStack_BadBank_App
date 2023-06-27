@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
-import { UserProvider, UserContext } from './src/components/userContext.js';
+import { UserProvider, UserContext } from './public/components/userContext.js';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
