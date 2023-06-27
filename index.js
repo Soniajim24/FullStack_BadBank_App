@@ -8,7 +8,6 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 const express = require('express');
 const app = express();
 
-import connectToDatabase from './database.js';
 
 var admin = require("firebase-admin");
 var serviceAccount = require("path/to/firebase-adminsdk-s8fp6@badbank-eb5fc.iam.gserviceaccount.com.json");
@@ -69,7 +68,17 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://badbank-eb5fc-default-rtdb.europe-west1.firebasedatabase.app"
 });
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
+
+async function handler(req, res) {
+    // Connect to the database
+    await connectToDatabase()
+
+    // Perform database operations
+    // ...
+}
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
@@ -109,10 +118,6 @@ querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data()}`);
 });
 
-
-
-
-
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
@@ -129,16 +134,6 @@ querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data()}`);
 });
 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-  <UserProvider>
-    <App />
-  </UserProvider>
-</React.StrictMode>
-);
 
 const port = process.env.PORT || 3000;
 
