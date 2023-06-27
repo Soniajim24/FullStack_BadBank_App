@@ -8,7 +8,6 @@
     "lint": "next lint",
     "build": "npm install",
     "start": "npm run dev",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci"
   },
   "engines": {
     "node": "18.16.0",
