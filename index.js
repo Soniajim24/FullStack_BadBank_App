@@ -1,9 +1,5 @@
 import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
-//import './index.css';
-//import App from './App.js';
-//import './src/bootstrap.min.css';
-//import './App.css';
 import { UserProvider, UserContext } from './src/components/userContext.js';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -13,8 +9,6 @@ const express = require('express');
 const app = express();
 
 import connectToDatabase from './database.js';
-
-
 
 var admin = require("firebase-admin");
 var serviceAccount = require("path/to/firebase-adminsdk-s8fp6@badbank-eb5fc.iam.gserviceaccount.com.json");
@@ -80,14 +74,6 @@ admin.initializeApp({
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-
-async function handler(req, res) {
-    // Connect to the database
-    await connectToDatabase()
-
-    // Perform database operations
-    // ...
-}
 
 const createUser = async (userData) => {
   try {
