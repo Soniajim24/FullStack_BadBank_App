@@ -1,21 +1,20 @@
 import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { UserProvider, UserContext } from './src/components/userContext';
+//import './index.css';
+//import App from './App.js';
+//import './src/bootstrap.min.css';
+//import './App.css';
+import { UserProvider, UserContext } from './src/components/userContext.js';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore"; 
 
-const connectToDatabase = require('./database/connectToDatabase');
 const express = require('express');
 const app = express();
 
-import connectToDatabase from './database';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../lib/initAuth';
+import connectToDatabase from './database.js';
+
+
 
 var admin = require("firebase-admin");
 var serviceAccount = require("path/to/firebase-adminsdk-s8fp6@badbank-eb5fc.iam.gserviceaccount.com.json");
@@ -113,6 +112,26 @@ export default async (req, res) => {
 };
 
 
+
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello from the server!' });
+});
+
+
+const querySnapshot = await getDocs(collection(db, "Bank"));
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+});
+
+
+
+
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
 
 app.get('/api/hello', (req, res) => {
     res.json({ message: 'Hello from the server!' });
