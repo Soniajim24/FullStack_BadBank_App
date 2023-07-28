@@ -77,7 +77,7 @@ const handleLogin = async () => {
     setMsg('Please enter your email');
     setColor('red');
     setIcon(<IconX />);
-    setClose(3000);
+    setClose(1000);
     return;
   }
 
@@ -120,7 +120,7 @@ const handleLogin = async () => {
 
     setTimeout(() => {
       router.push('./LoggedInHome');
-    }, 3000);
+    }, 1000);
     setTitle("You did great");
     setMsg("Successful Login");
     setColor("green");
