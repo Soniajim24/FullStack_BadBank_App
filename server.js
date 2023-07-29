@@ -2,6 +2,20 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const apiRoutes = require("./api");
+var ws = new WebSocket('wss://webrtc-filetransfer.herokuapp.com/');   
+
+   ws.onopen = function()    
+       {
+
+          // Web Socket is connected, send data using send()
+          var data={
+            mid:"login",
+            uid: myId
+
+          };
+               ws.send(JSON.stringify(data));      
+
+            };  
 
 app.use(express.static("public"));
 app.use(cors());
