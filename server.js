@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const apiRoutes = require("./api");
-var ws = new WebSocket('wss://webrtc-filetransfer.herokuapp.com/');   
+var ws = new WebSocket('wss://fullstackbadbank-b6da6885c918.herokuapp.com/');   
 
    ws.onopen = function()    
        {
