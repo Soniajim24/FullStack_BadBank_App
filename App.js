@@ -14,7 +14,7 @@ import { UserProvider, UserContext } from './public/components/userContext';
 import { useEffect, useContext } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { AuthProvider } from "./src/components/context";
-
+import { IconCheck, IconX } from '@tabler/icons-react';
 //firebase.initializeApp(firebaseConfig);
 
 export default function App() {
