@@ -142,6 +142,7 @@ const handleLogin = async () => {
 };
 
   const handleGoogleLogin = async () => {
+    const auth = getAuth();
     const provider = new GoogleAuthProvider();
     try {
       // Sign in with Google pop-up
